@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Choose a playful font */
+    background: linear-gradient(135deg, #ffcfdf, #b0f3f1);
+    margin: 0;
+    flex-direction: column;
+}
+
+h1 {
+    color: #2d2e2e;
+    text-shadow: 3px 3px #ffe0ac;
+    font-size: 3rem; /* Larger font size */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#game {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff60; /* Add a bit of transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: #34495e;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), background-color 0.3s ease;
+    background-image: url('yourimage.png'); /* Replace with your image file */
+    background-size: cover;
+    position: relative;
+}
+
+.cell::after {
+    content: "Fun!"; /* Add playful words */
+    position: absolute;
+    font-size: 16px;
+    color: #738290;
+    opacity: 0.3;
+}
+
+.cell:hover {
+    background-color: #ffcad4;
+    transform: rotate(10deg) scale(1.1);
+}
+
+.cell.x {
+    color: #3498db;
+    animation: popX 0.4s ease-out;
+}
+
+.cell.o {
+    color: #e74c3c;
+    animation: popO 0.4s ease-out;
+}
+
+@keyframes popX {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes popO {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
